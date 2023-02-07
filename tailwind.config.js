@@ -6,6 +6,12 @@ module.exports = {
     extend: {
       colors: {
         'cmablue': '#578192'
+      },
+      fontFamily: {
+        Spartan: ['League Spartan']
+      },
+      backgroundImage: {
+        'border': "url('/src/assets/border.png')"
       }
     },
   },

@@ -1,31 +1,46 @@
 
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
-defineProps<{
-  msg: string;
-}>();
+let menuOpen = false
+const toggleMenu = () => {
+  menuOpen = !menuOpen
+  console.log(menuOpen)
+  }
 </script>
 
 <template>
   <header class="bg-cmablue text-white">
+
+    <button :class="{hidden: menuOpen}" class="block fixed right-2 top-2" @click="toggleMenu">
+      <img
+        src="@/assets/menu.svg"
+        alt="open menu"
+        />
+    </button>
+    <button :class="{hidden: !menuOpen}" class="block fixed right-2 top-2" @click="toggleMenu">
+      <img
+        src="@/assets/close.svg"
+        alt="clos menu"
+        />
+    </button>
 
     <RouterLink to="/">
       <img
         alt="CMA Connect Fareham logo"
         src="@/assets/CMA_connect_fareham_logo.png"
         align="center" 
-        class="block mx-auto w-4/5"
+        class="block mx-auto w-3/4"
       />
     </RouterLink>
 
-    <nav class="">
+    <nav class="hidden">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/how-we-can-help">How we can help</RouterLink>
       <RouterLink to="/who-we-are">Who we are</RouterLink>
       <RouterLink to="/support-us">Support us</RouterLink>
     </nav>
   
-    <div class="">
+    <div class="hidden">
       <p>Book a time to meet with our volunteer money mentors:</p>
       <ul>
         <li>
