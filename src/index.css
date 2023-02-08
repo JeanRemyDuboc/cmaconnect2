@@ -6,7 +6,7 @@
 
 @layer components {
   html, body {
-    @apply font-Spartan
+    @apply font-Spartan h-screen
   }   
 }
 
@@ -27,5 +27,5 @@ a {
 }
 
 .menu-item {
-  @apply block p-2 text-3xl no-underline
+  @apply block p-2 text-3xl no-underline hover:text-gray-300
 }
